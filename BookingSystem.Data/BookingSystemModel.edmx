@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="BookingSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+        <EntityType Name="Bookings">
+          <Key>
+            <PropertyRef Name="BookingID" />
+          </Key>
+          <Property Name="BookingID" Nullable="false" Type="int" />
+          <Property Name="CompanyID" Nullable="false" Type="int" />
+          <Property Name="UserID" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="StartFrom" Nullable="false" Type="datetime" />
+          <Property Name="EndAt" Nullable="false" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="CategoryName" MaxLength="50" Type="nvarchar" />
+          <Property Name="CategoryDescription" MaxLength="254" Type="nvarchar" />
+          <Property Name="CategoryImage" MaxLength="254" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="ServiceID" Nullable="false" Type="int" />
+          <Property Name="UserID" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="CompanyName" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="CompanyDescription" MaxLength="254" Type="nvarchar" />
+          <Property Name="City" MaxLength="50" Type="nvarchar" />
+          <Property Name="Address" MaxLength="254" Type="nvarchar" />
+          <Property Name="Email" MaxLength="254" Type="nvarchar" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="ContactName" MaxLength="254" Type="nvarchar" />
+          <Property Name="CompanyImage" MaxLength="254" Type="nvarchar" />
+          <Property Name="CompanyWebsite" MaxLength="254" Type="nvarchar" />
+          <Property Name="IsActive" Nullable="false" Type="bit" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="CategoryID" Nullable="false" Type="int" />
+          <Property Name="ServiceName" MaxLength="50" Type="nvarchar" />
+          <Property Name="ServiceDescription" MaxLength="254" Type="nvarchar" />
+          <Property Name="ServiceImage" MaxLength="254" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="Workingtimes">
+          <Key>
+            <PropertyRef Name="WorkingTimeID" />
+          </Key>
+          <Property Name="WorkingTimeID" Nullable="false" Type="int" />
+          <Property Name="CompanyID" Nullable="false" Type="int" />
+          <Property Name="MoDayOff" Nullable="false" Type="bit" />
+          <Property Name="MoStartFrom" Precision="7" Type="time" />
+          <Property Name="MoWorkTo" Precision="7" Type="time" />
+          <Property Name="TuDayOff" Nullable="false" Type="bit" />
+          <Property Name="TuStartFrom" Precision="7" Type="time" />
+          <Property Name="TuWorkTo" Precision="7" Type="time" />
+          <Property Name="WeDayOff" Nullable="false" Type="bit" />
+          <Property Name="WeStartFrom" Precision="7" Type="time" />
+          <Property Name="WeWorkTo" Precision="7" Type="time" />
+          <Property Name="ThDayOff" Nullable="false" Type="bit" />
+          <Property Name="ThStartFrom" Precision="7" Type="time" />
+          <Property Name="ThWorkTo" Precision="7" Type="time" />
+          <Property Name="FrDayOff" Nullable="false" Type="bit" />
+          <Property Name="FrStartFrom" Precision="7" Type="time" />
+          <Property Name="FrWorkTo" Precision="7" Type="time" />
+          <Property Name="SaDayOff" Nullable="false" Type="bit" />
+          <Property Name="SaStartFrom" Precision="7" Type="time" />
+          <Property Name="SaWorkTo" Precision="7" Type="time" />
+          <Property Name="SuDayOff" Nullable="false" Type="bit" />
+          <Property Name="SuStartFrom" Precision="7" Type="time" />
+          <Property Name="SuWorkTo" Precision="7" Type="time" />
+        </EntityType>
+        <Association Name="FK_Bookings_Companies">
+          <End Type="Self.Companies" Multiplicity="1" Role="Companies" />
+          <End Type="Self.Bookings" Multiplicity="*" Role="Bookings" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Bookings">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_Services">
+          <End Type="Self.Services" Multiplicity="1" Role="Services" />
+          <End Type="Self.Companies" Multiplicity="*" Role="Companies" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_Categories">
+          <End Type="Self.Categories" Multiplicity="1" Role="Categories" />
+          <End Type="Self.Services" Multiplicity="*" Role="Services" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workingtimes_Companies">
+          <End Type="Self.Companies" Multiplicity="1" Role="Companies" />
+          <End Type="Self.Workingtimes" Multiplicity="*" Role="Workingtimes" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Workingtimes">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BookingSystemModelStoreContainer">
+          <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workingtimes" EntityType="Self.Workingtimes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bookings_Companies" Association="Self.FK_Bookings_Companies">
+            <End EntitySet="Companies" Role="Companies" />
+            <End EntitySet="Bookings" Role="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_Services" Association="Self.FK_Companies_Services">
+            <End EntitySet="Services" Role="Services" />
+            <End EntitySet="Companies" Role="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_Categories" Association="Self.FK_Services_Categories">
+            <End EntitySet="Categories" Role="Categories" />
+            <End EntitySet="Services" Role="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workingtimes_Companies" Association="Self.FK_Workingtimes_Companies">
+            <End EntitySet="Companies" Role="Companies" />
+            <End EntitySet="Workingtimes" Role="Workingtimes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BookingSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="BookingID" />
+          </Key>
+          <Property Name="BookingID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StartFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Company" Relationship="Self.FK_Bookings_Companies" FromRole="Bookings" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryDescription" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryImage" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Services" Relationship="Self.FK_Services_Categories" FromRole="Categories" ToRole="Services" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyDescription" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyImage" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyWebsite" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK_Bookings_Companies" FromRole="Companies" ToRole="Bookings" />
+          <NavigationProperty Name="Service" Relationship="Self.FK_Companies_Services" FromRole="Companies" ToRole="Services" />
+          <NavigationProperty Name="Workingtimes" Relationship="Self.FK_Workingtimes_Companies" FromRole="Companies" ToRole="Workingtimes" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceDescription" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceImage" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Services_Categories" FromRole="Services" ToRole="Categories" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_Services" FromRole="Services" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="Workingtime">
+          <Key>
+            <PropertyRef Name="WorkingTimeID" />
+          </Key>
+          <Property Name="WorkingTimeID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="MoDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="MoStartFrom" Type="Time" Precision="7" />
+          <Property Name="MoWorkTo" Type="Time" Precision="7" />
+          <Property Name="TuDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="TuStartFrom" Type="Time" Precision="7" />
+          <Property Name="TuWorkTo" Type="Time" Precision="7" />
+          <Property Name="WeDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="WeStartFrom" Type="Time" Precision="7" />
+          <Property Name="WeWorkTo" Type="Time" Precision="7" />
+          <Property Name="ThDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="ThStartFrom" Type="Time" Precision="7" />
+          <Property Name="ThWorkTo" Type="Time" Precision="7" />
+          <Property Name="FrDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="FrStartFrom" Type="Time" Precision="7" />
+          <Property Name="FrWorkTo" Type="Time" Precision="7" />
+          <Property Name="SaDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="SaStartFrom" Type="Time" Precision="7" />
+          <Property Name="SaWorkTo" Type="Time" Precision="7" />
+          <Property Name="SuDayOff" Type="Boolean" Nullable="false" />
+          <Property Name="SuStartFrom" Type="Time" Precision="7" />
+          <Property Name="SuWorkTo" Type="Time" Precision="7" />
+          <NavigationProperty Name="Company" Relationship="Self.FK_Workingtimes_Companies" FromRole="Workingtimes" ToRole="Companies" />
+        </EntityType>
+        <Association Name="FK_Bookings_Companies">
+          <End Role="Companies" Type="Self.Company" Multiplicity="1" />
+          <End Role="Bookings" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Bookings">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_Categories">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+          <End Role="Services" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_Services">
+          <End Role="Services" Type="Self.Service" Multiplicity="1" />
+          <End Role="Companies" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workingtimes_Companies">
+          <End Role="Companies" Type="Self.Company" Multiplicity="1" />
+          <End Role="Workingtimes" Type="Self.Workingtime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Workingtimes">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BookingSystemDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="Self.Booking" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="Workingtimes" EntityType="Self.Workingtime" />
+          <AssociationSet Name="FK_Bookings_Companies" Association="Self.FK_Bookings_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Bookings" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_Categories" Association="Self.FK_Services_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_Services" Association="Self.FK_Companies_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workingtimes_Companies" Association="Self.FK_Workingtimes_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Workingtimes" EntitySet="Workingtimes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BookingSystemModelStoreContainer" CdmEntityContainer="BookingSystemDataEntities">
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="BookingSystemModel.Booking">
+              <MappingFragment StoreEntitySet="Bookings">
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StartFrom" ColumnName="StartFrom" />
+                <ScalarProperty Name="EndAt" ColumnName="EndAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="BookingSystemModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+                <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="BookingSystemModel.Company">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="CompanyImage" ColumnName="CompanyImage" />
+                <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="BookingSystemModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+                <ScalarProperty Name="ServiceImage" ColumnName="ServiceImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workingtimes">
+            <EntityTypeMapping TypeName="BookingSystemModel.Workingtime">
+              <MappingFragment StoreEntitySet="Workingtimes">
+                <ScalarProperty Name="WorkingTimeID" ColumnName="WorkingTimeID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="MoDayOff" ColumnName="MoDayOff" />
+                <ScalarProperty Name="MoStartFrom" ColumnName="MoStartFrom" />
+                <ScalarProperty Name="MoWorkTo" ColumnName="MoWorkTo" />
+                <ScalarProperty Name="TuDayOff" ColumnName="TuDayOff" />
+                <ScalarProperty Name="TuStartFrom" ColumnName="TuStartFrom" />
+                <ScalarProperty Name="TuWorkTo" ColumnName="TuWorkTo" />
+                <ScalarProperty Name="WeDayOff" ColumnName="WeDayOff" />
+                <ScalarProperty Name="WeStartFrom" ColumnName="WeStartFrom" />
+                <ScalarProperty Name="WeWorkTo" ColumnName="WeWorkTo" />
+                <ScalarProperty Name="ThDayOff" ColumnName="ThDayOff" />
+                <ScalarProperty Name="ThStartFrom" ColumnName="ThStartFrom" />
+                <ScalarProperty Name="ThWorkTo" ColumnName="ThWorkTo" />
+                <ScalarProperty Name="FrDayOff" ColumnName="FrDayOff" />
+                <ScalarProperty Name="FrStartFrom" ColumnName="FrStartFrom" />
+                <ScalarProperty Name="FrWorkTo" ColumnName="FrWorkTo" />
+                <ScalarProperty Name="SaDayOff" ColumnName="SaDayOff" />
+                <ScalarProperty Name="SaStartFrom" ColumnName="SaStartFrom" />
+                <ScalarProperty Name="SaWorkTo" ColumnName="SaWorkTo" />
+                <ScalarProperty Name="SuDayOff" ColumnName="SuDayOff" />
+                <ScalarProperty Name="SuStartFrom" ColumnName="SuStartFrom" />
+                <ScalarProperty Name="SuWorkTo" ColumnName="SuWorkTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
