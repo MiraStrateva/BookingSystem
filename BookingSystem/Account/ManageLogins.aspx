@@ -1,5 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageLogins.aspx.cs" Inherits="BookingSystem.Account.ManageLogins" %>
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Site.Master" 
+    AutoEventWireup="true" CodeBehind="ManageLogins.aspx.cs" 
+    Inherits="BookingSystem.Account.ManageLogins" %>
+<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" 
+    TagName="OpenAuthProviders" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Manage your external logins.</h2>

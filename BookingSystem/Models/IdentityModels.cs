@@ -92,7 +92,7 @@ namespace BookingSystem
             }
             else
             {
-                response.Redirect("~/");
+                response.Redirect("~/Views/");
             }
         }
     }

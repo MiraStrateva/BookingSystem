@@ -32,6 +32,5 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Data\bin\Microsoft.AI.WindowsServer.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Data\bin\Microsoft.ApplicationInsights.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Data\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Data\obj\Debug\BookingSystem.Data.csprojResolveAssemblyReference.cache
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Data\obj\Debug\BookingSystem.Data.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Data\obj\Debug\BookingSystem.Data.pdb

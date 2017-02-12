@@ -17,7 +17,7 @@
     <link href="~/Shelves.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body id="main">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>

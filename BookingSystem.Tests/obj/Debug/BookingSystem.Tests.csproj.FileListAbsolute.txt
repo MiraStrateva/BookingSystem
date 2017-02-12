@@ -1,3 +1,4 @@
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\obj\Debug\BookingSystem.Tests.csprojResolveAssemblyReference.cache
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\bin\Debug\ApplicationInsights.config
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\bin\Debug\roslyn\csc.exe
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -59,6 +60,5 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\bin\Debug\Newtonsoft.Json.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\bin\Debug\Castle.Core.xml
-D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\obj\Debug\BookingSystem.Tests.csprojResolveAssemblyReference.cache
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\obj\Debug\BookingSystem.Tests.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem.Tests\obj\Debug\BookingSystem.Tests.pdb

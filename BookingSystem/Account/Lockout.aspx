@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lockout.aspx.cs" Inherits="BookingSystem.Account.Lockout" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Site.Master" 
+    AutoEventWireup="true" CodeBehind="Lockout.aspx.cs" 
+    Inherits="BookingSystem.Account.Lockout" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup>

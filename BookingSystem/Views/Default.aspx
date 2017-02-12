@@ -7,9 +7,9 @@
         <asp:DataList id="DataListCategories" runat="server"
             DataKeyField="CategoryID"
             RepeatLayout="Table" RepeatDirection="Horizontal" 
-            RepeatColumns="3" CellSpacing="0">
+            RepeatColumns="3" CellPadding ="15">
             <ItemTemplate>
-                <div class="categoryImage" style="background:url('<%#: Eval("CategoryImage") %>')">
+                <div class="categoryImage" style="background:url('<%# Eval("CategoryImage") %>') center 100%">
                     <h2><%#: Eval("CategoryName") %></h2>
                     <p class="lead"><%#: Eval("CategoryDescription") %></p>
                 </div>
@@ -59,30 +59,30 @@
             <div class="row">
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
             </div>
             <br />
@@ -95,30 +95,30 @@
             <div class="row">
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
                 <div class="col-md-4">
                     <asp:Image CssClass="place" runat="server" 
-                        src="./../Images/question-mark.jpg"></asp:Image>
+                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
                 </div>
             </div>
             <br />
