@@ -10,8 +10,6 @@ namespace BookingSystem.Data.Contracts
 
         IDbSet<Company> Companies { get; }
 
-        IDbSet<Service> Services { get; }
-    
         IDbSet<Workingtime> Workingtimes { get; }
     }
 }

@@ -9,7 +9,8 @@
             RepeatLayout="Table" RepeatDirection="Horizontal" 
             RepeatColumns="3" CellPadding ="15">
             <ItemTemplate>
-                <div class="categoryImage" style="background:url('<%# Eval("CategoryImage") %>') center 100%">
+                <div class="categoryImage" 
+                    style="background:url('<%# Eval("CategoryImage") %>') center 100%">
                     <h2><%#: Eval("CategoryName") %></h2>
                     <p class="lead"><%#: Eval("CategoryDescription") %></p>
                 </div>

@@ -43,7 +43,7 @@ namespace BookingSystem.Providers
 
         public IEnumerable<Company> GetCompaniesByCategoryId(int categoryId)
         {
-            return this.dbContext.Companies.Where(c => c.Service.CategoryID == categoryId).ToList();
+            return this.dbContext.Companies.Where(c => c.CategoryID == categoryId).ToList();
         }
 
         public IEnumerable<Company> GetCompaniesLastAdded(int count)

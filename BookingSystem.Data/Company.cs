@@ -22,7 +22,7 @@ namespace BookingSystem.Data
         }
     
         public int CompanyID { get; set; }
-        public int ServiceID { get; set; }
+        public int CategoryID { get; set; }
         public string UserID { get; set; }
         public string CompanyName { get; set; }
         public string CompanyDescription { get; set; }
@@ -37,7 +37,7 @@ namespace BookingSystem.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Bookings { get; set; }
-        public virtual Service Service { get; set; }
+        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Workingtime> Workingtimes { get; set; }
     }

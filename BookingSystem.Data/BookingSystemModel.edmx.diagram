@@ -4,15 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="223b8334dc424fc194085df6cfe47c35" Name="Diagram1">
-        <EntityTypeShape EntityType="BookingSystemModel.Booking" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="9eecce371f1e490ea2bbd90e8b282b21" Name="Diagram1">
+        <EntityTypeShape EntityType="BookingSystemModel.Booking" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BookingSystemModel.Category" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingSystemModel.Company" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingSystemModel.Service" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookingSystemModel.Workingtime" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingSystemModel.Company" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingSystemModel.Workingtime" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="BookingSystemModel.FK_Bookings_Companies" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingSystemModel.FK_Services_Categories" ManuallyRouted="false" />
-        <AssociationConnector Association="BookingSystemModel.FK_Companies_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingSystemModel.FK_Companies_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="BookingSystemModel.FK_Workingtimes_Companies" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

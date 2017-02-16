@@ -13,10 +13,10 @@ namespace BookingSystem.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookingSystemDataEntities : DbContext
+    public partial class BookingSystemEntities : DbContext
     {
-        public BookingSystemDataEntities()
-            : base("name=BookingSystemDataEntities")
+        public BookingSystemEntities()
+            : base("name=BookingSystemEntities")
         {
         }
     
@@ -28,7 +28,6 @@ namespace BookingSystem.Data
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
-        public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Workingtime> Workingtimes { get; set; }
     }
 }

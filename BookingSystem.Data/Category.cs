@@ -17,7 +17,7 @@ namespace BookingSystem.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
-            this.Services = new HashSet<Service>();
+            this.Companies = new HashSet<Company>();
         }
     
         public int CategoryID { get; set; }
@@ -26,6 +26,6 @@ namespace BookingSystem.Data
         public string CategoryImage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Service> Services { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
     }
 }

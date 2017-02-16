@@ -1,4 +1,3 @@
-D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.csprojResolveAssemblyReference.cache
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\ApplicationInsights.config
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\roslyn\csc.exe
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -94,5 +93,6 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.csprojResolveAssemblyReference.cache
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.pdb

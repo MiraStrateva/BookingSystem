@@ -3,7 +3,7 @@
     using BookingSystem.Data.Contracts;
     using System.Data.Entity;
 
-    public class BookingSystemDbContext : BookingSystemDataEntities, IDbContext
+    public class BookingSystemDbContext : BookingSystemEntities, IDbContext
     {
         IDbSet<Booking> IDbContext.Bookings
         {
@@ -26,14 +26,6 @@
             get
             {
                 return base.Companies;
-            }
-        }
-
-        IDbSet<Service> IDbContext.Services
-        {
-            get
-            {
-                return base.Services;
             }
         }
 

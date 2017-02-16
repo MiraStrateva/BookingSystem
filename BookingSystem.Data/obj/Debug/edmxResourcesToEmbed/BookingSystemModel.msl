@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BookingSystemModelStoreContainer" CdmEntityContainer="BookingSystemDataEntities">
+  <EntityContainerMapping StorageEntityContainer="BookingSystemModelStoreContainer" CdmEntityContainer="BookingSystemEntities">
     <EntitySetMapping Name="Bookings">
       <EntityTypeMapping TypeName="BookingSystemModel.Booking">
         <MappingFragment StoreEntitySet="Bookings">
@@ -26,7 +26,7 @@
       <EntityTypeMapping TypeName="BookingSystemModel.Company">
         <MappingFragment StoreEntitySet="Companies">
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
@@ -38,17 +38,6 @@
           <ScalarProperty Name="CompanyImage" ColumnName="CompanyImage" />
           <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Services">
-      <EntityTypeMapping TypeName="BookingSystemModel.Service">
-        <MappingFragment StoreEntitySet="Services">
-          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
-          <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
-          <ScalarProperty Name="ServiceImage" ColumnName="ServiceImage" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

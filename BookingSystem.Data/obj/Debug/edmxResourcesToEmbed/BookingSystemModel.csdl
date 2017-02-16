@@ -19,14 +19,14 @@
     <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CategoryDescription" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
     <Property Name="CategoryImage" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Services" Relationship="Self.FK_Services_Categories" FromRole="Categories" ToRole="Services" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_Categories" FromRole="Categories" ToRole="Companies" />
   </EntityType>
   <EntityType Name="Company">
     <Key>
       <PropertyRef Name="CompanyID" />
     </Key>
     <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
     <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CompanyDescription" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
@@ -39,20 +39,8 @@
     <Property Name="CompanyWebsite" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Bookings" Relationship="Self.FK_Bookings_Companies" FromRole="Companies" ToRole="Bookings" />
-    <NavigationProperty Name="Service" Relationship="Self.FK_Companies_Services" FromRole="Companies" ToRole="Services" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Companies_Categories" FromRole="Companies" ToRole="Categories" />
     <NavigationProperty Name="Workingtimes" Relationship="Self.FK_Workingtimes_Companies" FromRole="Companies" ToRole="Workingtimes" />
-  </EntityType>
-  <EntityType Name="Service">
-    <Key>
-      <PropertyRef Name="ServiceID" />
-    </Key>
-    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryID" Type="Int32" Nullable="false" />
-    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ServiceDescription" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
-    <Property Name="ServiceImage" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Category" Relationship="Self.FK_Services_Categories" FromRole="Services" ToRole="Categories" />
-    <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_Services" FromRole="Services" ToRole="Companies" />
   </EntityType>
   <EntityType Name="Workingtime">
     <Key>
@@ -95,27 +83,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Services_Categories">
+  <Association Name="FK_Companies_Categories">
     <End Role="Categories" Type="Self.Category" Multiplicity="1" />
-    <End Role="Services" Type="Self.Service" Multiplicity="*" />
+    <End Role="Companies" Type="Self.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Categories">
         <PropertyRef Name="CategoryID" />
       </Principal>
-      <Dependent Role="Services">
-        <PropertyRef Name="CategoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Companies_Services">
-    <End Role="Services" Type="Self.Service" Multiplicity="1" />
-    <End Role="Companies" Type="Self.Company" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Services">
-        <PropertyRef Name="ServiceID" />
-      </Principal>
       <Dependent Role="Companies">
-        <PropertyRef Name="ServiceID" />
+        <PropertyRef Name="CategoryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -131,22 +107,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BookingSystemDataEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="BookingSystemEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bookings" EntityType="Self.Booking" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Companies" EntityType="Self.Company" />
-    <EntitySet Name="Services" EntityType="Self.Service" />
     <EntitySet Name="Workingtimes" EntityType="Self.Workingtime" />
     <AssociationSet Name="FK_Bookings_Companies" Association="Self.FK_Bookings_Companies">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Bookings" EntitySet="Bookings" />
     </AssociationSet>
-    <AssociationSet Name="FK_Services_Categories" Association="Self.FK_Services_Categories">
+    <AssociationSet Name="FK_Companies_Categories" Association="Self.FK_Companies_Categories">
       <End Role="Categories" EntitySet="Categories" />
-      <End Role="Services" EntitySet="Services" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Companies_Services" Association="Self.FK_Companies_Services">
-      <End Role="Services" EntitySet="Services" />
       <End Role="Companies" EntitySet="Companies" />
     </AssociationSet>
     <AssociationSet Name="FK_Workingtimes_Companies" Association="Self.FK_Workingtimes_Companies">
