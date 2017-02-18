@@ -16,10 +16,9 @@ namespace BookingSystem.App_Start.NinjectModules
     {
         public override void Load()
         {
+            // Presenters
             this.Bind<IPresenterFactory>().To<WebFormsMvpPresenterFactory>().InSingletonScope();
-
             this.Bind<ICustomPresenterFactory>().ToFactory().InSingletonScope();
-
             this.Bind<IPresenter>()
                 .ToMethod(this.GetPresenter)
                 .NamedLikeFactoryMethod((ICustomPresenterFactory factory) => factory.GetPresenter(null, null));

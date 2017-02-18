@@ -1,26 +1,21 @@
-﻿namespace BookingSystem.Views
-{
-    using System;
-    using WebFormsMvp.Web;
-    using Models;
-    using Presenters;
-    using WebFormsMvp;
-    using Presenters.Contracts;
+﻿using System;
+using BookingSystem.MVP.Default;
+using WebFormsMvp.Web;
+using WebFormsMvp;
+using System.Linq;
 
+namespace BookingSystem.Views
+{
     [PresenterBinding(typeof(DefaultPresenter))]
-    public partial class _Default : MvpPage<CategoryViewModel>, IDefaultView
+    public partial class _Default : MvpPage<DefaultViewModel>, IDefaultView
     {
-        public event EventHandler OnStart;
+        public event EventHandler OnCategoriesGetData;
         protected void Page_Load(object sender, EventArgs e)
         {
-            // BookingSystemDataEntities entities = new BookingSystemDataEntities();
-            this.OnStart?.Invoke(sender, e);
+            this.OnCategoriesGetData?.Invoke(sender, e);
 
-            this.DataListCategories.DataSource = this.Model.Categories;
+            this.DataListCategories.DataSource = this.Model.DefaultCategories.ToList();
             this.DataListCategories.DataBind();
-
-            //this.ListViewCategories.DataSource = this.Model.Categories;
-            //this.ListViewCategories.DataBind();
         }
     }
 }

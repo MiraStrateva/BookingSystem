@@ -104,26 +104,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BookingSystemModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookingSystemModel.edmx</DependentUpon>
-      <LastGenOutput>BookingSystemModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BookingSystemModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookingSystemModel.edmx</DependentUpon>
-      <LastGenOutput>BookingSystemModel.cs</LastGenOutput>
-    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="BookingSystemModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookingSystemModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="BookingSystemModel.edmx.diagram">
-      <DependentUpon>BookingSystemModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -136,36 +119,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Booking.cs">
-      <DependentUpon>BookingSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BookingSystemDbContext.cs" />
-    <Compile Include="BookingSystemModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingSystemModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BookingSystemModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BookingSystemModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingSystemModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Category.cs">
-      <DependentUpon>BookingSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Company.cs">
-      <DependentUpon>BookingSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Contracts\IDbContext.cs" />
+    <Compile Include="BookingSystemContext.cs" />
+    <Compile Include="Contracts\IBookingSystemContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Workingtime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Workingtime.cs">
-      <DependentUpon>BookingSystemModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

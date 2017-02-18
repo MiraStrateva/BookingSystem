@@ -5,8 +5,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="AdminContent" runat="server">
     <h1>Categories</h1>
     <asp:EntityDataSource ID="EntityDataSourceCategories" runat="server" 
-        ConnectionString="name=BookingSystemEntities" 
-        DefaultContainerName="BookingSystemEntities" 
+        ConnectionString="name=DefaultConnection" 
+        DefaultContainerName="DefaultConnection" 
         EnableInsert="true" EnableUpdate="true" EnableDelete="true"   
         EntitySetName="Categories" 
         OnUpdating="EntityDataSourceCategories_Updating" OnUpdated="EntityDataSourceCategories_Updated" 

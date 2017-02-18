@@ -18,6 +18,8 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\AspNet.ScriptManager.bootstrap.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\AspNet.ScriptManager.jQuery.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\BookingSystem.Data.dll
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\BookingSystem.MVP.dll
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\BookingSystem.Services.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Castle.Core.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\EntityFramework.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\EntityFramework.SqlServer.dll
@@ -48,6 +50,7 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.Web.Infrastructure.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Newtonsoft.Json.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.dll
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Extensions.Conventions.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Extensions.Factory.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Web.Common.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Web.dll
@@ -59,6 +62,8 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\WebFormsMvp.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\WebGrease.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\BookingSystem.Data.pdb
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\BookingSystem.MVP.pdb
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\BookingSystem.Services.pdb
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Castle.Core.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.AI.DependencyCollector.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -67,6 +72,7 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.ApplicationInsights.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.xml
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Extensions.Conventions.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Extensions.Factory.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Web.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Ninject.Web.Common.xml
@@ -94,5 +100,6 @@ D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSys
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.csprojResolveAssemblyReference.cache
+D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.g.resources
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.dll
 D:\Mira\TelerikAcademy\ASP .Net Web Forms\CourseProject\BookingSystem\BookingSystem\obj\Debug\BookingSystem.pdb

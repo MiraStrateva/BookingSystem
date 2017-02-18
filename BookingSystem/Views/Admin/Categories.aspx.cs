@@ -1,10 +1,10 @@
-﻿namespace BookingSystem.Views.Admin
-{
-    using BookingSystem.Data;
-    using System;
-    using System.IO;
-    using System.Web.UI.WebControls;
+﻿using BookingSystem.Data.Models;
+using System;
+using System.IO;
+using System.Web.UI.WebControls;
 
+namespace BookingSystem.Views.Admin
+{
     public partial class Categories : System.Web.UI.Page
     {
         protected void ButtonInsertCategory_Click(object sender, EventArgs e)
@@ -19,23 +19,12 @@
             var newCategory = (e.Entity as Category);
             string newCategoryName = ((TextBox)GridViewCategories.FooterRow.FindControl("FTextBoxCategoryName")).Text;
             string newCategoryDescription = ((TextBox)GridViewCategories.FooterRow.FindControl("FTextBoxCategoryDescription")).Text;
-            
-            // Upload image
-            if (((FileUpload)GridViewCategories.FooterRow.FindControl("FFileUploadControl")).HasFile)
-            {
-                string filename = Path.GetFileName(((FileUpload)GridViewCategories.FooterRow.FindControl("FFileUploadControl")).FileName);
-                string fullpathFilename = Path.Combine(Server.MapPath("~/Images/Categories/"), filename);
-
-                ((FileUpload)GridViewCategories.FooterRow.FindControl("FFileUploadControl"))
-                    .SaveAs(fullpathFilename);
-
-                // newCategory.CategoryImage = Path.Combine("~/Images/Categories/", filename);
-                newCategory.CategoryImage = Path.Combine("http://localhost:59329/Images/Categories/", filename);
-            }
+            string newCategoryImageFileName = UploadImage(((FileUpload)GridViewCategories.FooterRow.FindControl("FFileUploadControl")));
 
             newCategory.CategoryName = newCategoryName;
             newCategory.CategoryDescription = newCategoryDescription;
-        }
+            newCategory.CategoryImage = newCategoryImageFileName;
+    }
 
         protected void CategoriesDataSource_Inserted(
                 object sender,
@@ -49,27 +38,32 @@
             var editCategory = (e.Entity as Category);
             string editCategoryName = ((TextBox)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("TextBoxCategoryName")).Text;
             string editCategoryDescription = ((TextBox)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("TextBoxCategoryDescription")).Text;
-
-            // Upload image
-            if (((FileUpload)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("FileUploadControl")).HasFile)
-            {
-                string filename = Path.GetFileName(((FileUpload)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("FileUploadControl")).FileName);
-                string fullpathFilename = Path.Combine(Server.MapPath("~/Images/Categories/"), filename);
-
-                ((FileUpload)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("FileUploadControl"))
-                    .SaveAs(fullpathFilename);
-
-                // newCategory.CategoryImage = Path.Combine("~/Images/Categories/", filename);
-                editCategory.CategoryImage = Path.Combine("http://localhost:59329/Images/Categories/", filename);
-            }
+            string editCategoryImageFileName = UploadImage(((FileUpload)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("FileUploadControl")));
 
             editCategory.CategoryName = editCategoryName;
             editCategory.CategoryDescription = editCategoryDescription;
+            editCategory.CategoryImage = editCategoryImageFileName;
         }
 
         protected void EntityDataSourceCategories_Updated(object sender, EntityDataSourceChangedEventArgs e)
         {
             GridViewCategories.DataBind();
+        }
+
+        // TODO: Make abstract
+        protected string UploadImage(FileUpload fileUpload)
+        {
+            string imageFile = "";
+            if (fileUpload.HasFile)
+            {
+                string filename = Path.GetFileName(fileUpload.FileName);
+                string fullpathFilename = Path.Combine(Server.MapPath("~/Images/Categories/"), filename);
+
+                fileUpload.SaveAs(fullpathFilename);
+
+                imageFile = Path.Combine("/Images/Categories/", filename);
+            }
+            return imageFile;
         }
     }
 }

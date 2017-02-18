@@ -84,6 +84,10 @@
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.1-unstable-005\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject.Extensions.Factory, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.Extensions.Factory.3.2.2-unstable-002\lib\net45-full\Ninject.Extensions.Factory.dll</HintPath>
       <Private>True</Private>
@@ -214,6 +218,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\bed-1979270_640.jpg" />
+    <Resource Include="Images\computer-2049096_640.jpg" />
+    <Content Include="400.html" />
+    <Content Include="403.html" />
+    <Content Include="404.html" />
+    <Content Include="500.html" />
     <Content Include="Images\Toolbar\Clear.png" />
     <Content Include="Images\Toolbar\Delete.png" />
     <Content Include="Images\Toolbar\Edit.png" />
@@ -236,9 +246,10 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Images\background.jpg" />
+    <Resource Include="Images\background.jpg" />
     <Content Include="Views\Admin\Categories.aspx" />
     <Content Include="Views\Admin\Companies.aspx" />
+    <Content Include="Views\CategoryCompanies.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -284,6 +295,7 @@
     <Content Include="Views\Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Views\RegisterCompany.aspx" />
     <Content Include="Views\Site.Master" />
     <Content Include="Views\ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -445,6 +457,13 @@
       <DependentUpon>Companies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Helpers\EntityDataSourceExtentions.cs" />
+    <Compile Include="Views\CategoryCompanies.aspx.cs">
+      <DependentUpon>CategoryCompanies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryCompanies.aspx.designer.cs">
+      <DependentUpon>CategoryCompanies.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -462,13 +481,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Presenters\Contracts\IDefaultView.cs" />
-    <Compile Include="Presenters\DefaultPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\Contracts\IDataProvider.cs" />
-    <Compile Include="Providers\DataProvider.cs" />
+    <Compile Include="Views\RegisterCompany.aspx.cs">
+      <DependentUpon>RegisterCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterCompany.aspx.designer.cs">
+      <DependentUpon>RegisterCompany.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -494,11 +515,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ErrorPages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookingSystem.Data\BookingSystem.Data.csproj">
       <Project>{a5a0e925-d1df-433e-9e44-c1b4c7ca6b5a}</Project>
       <Name>BookingSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookingSystem.MVP\BookingSystem.MVP.csproj">
+      <Project>{71FCA214-112E-4DC9-835B-7421B5A43150}</Project>
+      <Name>BookingSystem.MVP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookingSystem.Services\BookingSystem.Services.csproj">
+      <Project>{265dab7d-2e07-4201-815f-b549fddf1610}</Project>
+      <Name>BookingSystem.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

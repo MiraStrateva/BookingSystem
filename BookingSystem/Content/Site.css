@@ -5,7 +5,7 @@ body {
 }
 
     #main{
-        background: url('./../Images/background3.jpg') no-repeat center center fixed;
+        background: url('/Images/background3.jpg') no-repeat center center fixed;
         background-size: cover;
         color:white;
     }
@@ -63,7 +63,7 @@ input[type="select"] {
     }
 }
 
-#pickandbook, #joinus
+#pickandbook, #joinus, #contactus
 {
     margin-top: 20px;
     background-position:center;
@@ -73,10 +73,14 @@ input[type="select"] {
 }
 
 #pickandbook {
-    background: url('Images/bed-1979270_640.jpg') no-repeat;
+    background: url("/Images/bed-1979270_640.jpg") no-repeat;
 }
 #joinus {
-    background: url('./../Images/computer-2049096_640.jpg') no-repeat;
+    background: url("/Images/computer-2049096_640.jpg") no-repeat;
+}
+#contactus {
+    background: url("/Images/keyboard-1905883_1280.jpg") no-repeat;
+    color:white;
 }
 
 /*.prevButton,
