@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using BookingSystem.Auth;
 
 namespace BookingSystem.Account
 {

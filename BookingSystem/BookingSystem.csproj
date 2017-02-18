@@ -428,13 +428,11 @@
     </Compile>
     <Compile Include="App_Start\Factories\ICustomPresenterFactory.cs" />
     <Compile Include="App_Start\Factories\WebFormsMvpPresenterFactory.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectModules\BookingSystemNinjectModule.cs" />
     <Compile Include="App_Start\NinjectModules\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Views\Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -481,7 +479,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\RegisterCompany.aspx.cs">
       <DependentUpon>RegisterCompany.aspx</DependentUpon>
@@ -504,7 +501,6 @@
     <Compile Include="Views\Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
     <Compile Include="Views\ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -518,6 +514,10 @@
     <Folder Include="ErrorPages\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookingSystem.Auth\BookingSystem.Auth.csproj">
+      <Project>{3c01a16b-e39c-481e-a124-d3343824139d}</Project>
+      <Name>BookingSystem.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookingSystem.Data\BookingSystem.Data.csproj">
       <Project>{a5a0e925-d1df-433e-9e44-c1b4c7ca6b5a}</Project>
       <Name>BookingSystem.Data</Name>
