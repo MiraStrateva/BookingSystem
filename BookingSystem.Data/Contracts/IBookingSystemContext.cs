@@ -1,10 +1,13 @@
 ﻿using BookingSystem.Data.Models;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace BookingSystem.Data.Contracts
 {
-    public interface IBookingSystemContext
+    public interface IBookingSystemContext : IBookingSystemBaseContext
     {
+        DbEntityEntry Entry(object entity);
+
         IDbSet<Booking> Bookings { get; }
 
         IDbSet<Category> Categories { get; }
@@ -12,7 +15,5 @@ namespace BookingSystem.Data.Contracts
         IDbSet<Company> Companies { get; }
 
         IDbSet<Workingtime> Workingtimes { get; }
-
-        int SaveChanges();
     }
 }

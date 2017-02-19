@@ -13,6 +13,7 @@ namespace BookingSystem.Data.Models
             this.Bookings = new HashSet<Booking>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid CompanyId { get; set; }
 
         [Required]

@@ -9,5 +9,13 @@ namespace BookingSystem.Services.Contracts
         IQueryable<Category> GetAllCategories();
 
         string GetCategoryNameById(Guid? categoryId);
+
+        int InsertCategory(Category category);
+
+        int DeleteCategory(Guid? categoryId);
+
+        int UpdateCategory(Category category);
+
+        Category GetById(Guid? categoryId);
     }
 }

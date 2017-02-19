@@ -15,7 +15,7 @@ namespace BookingSystem.App_Start.NinjectModules
     {
         public override void Load()
         {
-            //Kernel.Bind(x =>
+            //this.Bind(x =>
             //{
             //    x.FromAssembliesInPath(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
             //    .SelectAllClasses()
@@ -23,8 +23,9 @@ namespace BookingSystem.App_Start.NinjectModules
             //});
 
             // DBContext 
-            this.Bind<IBookingSystemContext>().To<BookingSystemContext>().InSingletonScope();
-            
+            // this.Bind<IBookingSystemContext>().To<BookingSystemContext>().InSingletonScope();
+            this.Bind(typeof(IBookingSystemContext), typeof(IBookingSystemBaseContext)).To<BookingSystemContext>().InSingletonScope();
+
             // Services
             this.Bind<ICompanyService>().To<CompanyService>();
             this.Bind<ICategoryService>().To<CategoryService>();
@@ -32,8 +33,8 @@ namespace BookingSystem.App_Start.NinjectModules
             this.Bind<IWorkingtimeService>().To<WorkingtimeService>();
 
             // Presenters
-            this.Bind<DefaultPresenter>().ToSelf();
-            this.Bind<CategoryCompaniesPresenter>().ToSelf();
+            //this.Bind<DefaultPresenter>().ToSelf();
+            //this.Bind<CategoryCompaniesPresenter>().ToSelf();
         }
     }
 }

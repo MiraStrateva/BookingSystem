@@ -30,7 +30,7 @@ namespace BookingSystem.Services
         public IQueryable<Company> GetCompaniesByCategoryIdNameAndDescription(Guid? categoryId, string searchText)
         {
             return GetCompaniesByCategoryId(categoryId)
-                        .Where((c => string.IsNullOrEmpty(c.CompanyName) ? false : c.CompanyName.ToLower().Contains(searchText)) ||
+                        .Where(c => (string.IsNullOrEmpty(c.CompanyName) ? false : c.CompanyName.ToLower().Contains(searchText)) ||
                         (string.IsNullOrEmpty(c.CompanyDescription) ? false : c.CompanyDescription.ToLower().Contains(searchText)));
         }
 

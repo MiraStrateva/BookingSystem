@@ -1,61 +1,59 @@
-﻿using BookingSystem.Data.Models;
+﻿using BookingSystem.MVP.Categories;
 using System;
 using System.IO;
+using System.Linq;
 using System.Web.UI.WebControls;
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace BookingSystem.Views.Admin
 {
-    public partial class Categories : System.Web.UI.Page
+    [PresenterBinding(typeof(CategoriesPresenter))]
+    public partial class Categories : MvpPage<CategoriesViewModel>, ICategoriesView
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        public event EventHandler OnGetData;
+        public event EventHandler<CategoryInsertEventArgs> OnInsertItem;
+        public event EventHandler<IdEventArgs> OnDeleteItem;
+        public event EventHandler<IdEventArgs> OnUpdateItem;
 
+        // The return type can be changed to IEnumerable, however to support
+        // paging and sorting, the following parameters must be added:
+        //     int maximumRows
+        //     int startRowIndex
+        //     out int totalRowCount
+        //     string sortByExpression
+        public IQueryable GridViewCategories_GetData()
+        {
+            this.OnGetData?.Invoke(this, null);
+            return this.Model.Categories;
         }
 
         protected void ButtonInsertCategory_Click(object sender, EventArgs e)
         {
-            EntityDataSourceCategories.Insert();
-        }
-
-        protected void CategoriesDataSource_Inserting(
-                object sender,
-                EntityDataSourceChangingEventArgs e)
-        {
-            var newCategory = (e.Entity as Category);
             string newCategoryName = ((TextBox)GridViewCategories.FooterRow.FindControl("FTextBoxCategoryName")).Text;
             string newCategoryDescription = ((TextBox)GridViewCategories.FooterRow.FindControl("FTextBoxCategoryDescription")).Text;
             string newCategoryImageFileName = UploadImage(((FileUpload)GridViewCategories.FooterRow.FindControl("FFileUploadControl")));
-
-            newCategory.CategoryName = newCategoryName;
-            newCategory.CategoryDescription = newCategoryDescription;
-            newCategory.CategoryImage = newCategoryImageFileName;
-    }
-
-        protected void CategoriesDataSource_Inserted(
-                object sender,
-                EntityDataSourceChangedEventArgs e)
-        {
-            GridViewCategories.DataBind();
+            
+            this.OnInsertItem?.Invoke(this, 
+                new CategoryInsertEventArgs(newCategoryName, newCategoryDescription, newCategoryImageFileName));
         }
         
-        protected void EntityDataSourceCategories_Updating(object sender, EntityDataSourceChangingEventArgs e)
+        protected void GridViewCategories_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            var editCategory = (e.Entity as Category);
-            string editCategoryName = ((TextBox)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("TextBoxCategoryName")).Text;
-            string editCategoryDescription = ((TextBox)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("TextBoxCategoryDescription")).Text;
-            string editCategoryImageFileName = UploadImage(((FileUpload)GridViewCategories.Rows[GridViewCategories.EditIndex].FindControl("FileUploadControl")));
+            GridViewCategories.SelectedIndex = e.RowIndex;
+        }
+        
+        protected void GridViewCategories_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewCategories.SelectedIndex = e.RowIndex;
 
-            editCategory.CategoryName = editCategoryName;
-            editCategory.CategoryDescription = editCategoryDescription;
-            editCategory.CategoryImage = editCategoryImageFileName;
+            string newImageFileName = UploadImage(((FileUpload)GridViewCategories.Rows[e.RowIndex].FindControl("FileUploadControl")));
+            if (!string.IsNullOrEmpty(newImageFileName))
+            {
+                e.NewValues["CategoryImage"] = newImageFileName;
+            }
         }
 
-        protected void EntityDataSourceCategories_Updated(object sender, EntityDataSourceChangedEventArgs e)
-        {
-            GridViewCategories.DataBind();
-        }
-
-        // TODO: Make abstract
         protected string UploadImage(FileUpload fileUpload)
         {
             string imageFile = "";
@@ -69,6 +67,20 @@ namespace BookingSystem.Views.Admin
                 imageFile = Path.Combine("/Images/Categories/", filename);
             }
             return imageFile;
+        }
+        
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void GridViewCategories_UpdateItem(Guid? id)
+        {
+            Guid categoryId = ((Guid)GridViewCategories.SelectedDataKey.Value);
+            this.OnUpdateItem?.Invoke(this, new IdEventArgs(categoryId));
+        }
+
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void GridViewCategories_DeleteItem(Guid? id)
+        {
+            Guid categoryId = ((Guid)GridViewCategories.SelectedDataKey.Value);
+            this.OnDeleteItem?.Invoke(this, new IdEventArgs(categoryId));
         }
     }
 }

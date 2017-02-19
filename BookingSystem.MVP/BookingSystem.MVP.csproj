@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories\CategoriesPresenter.cs" />
+    <Compile Include="Categories\CategoriesViewModel.cs" />
+    <Compile Include="Categories\CategoryInsertEventArgs.cs" />
+    <Compile Include="Categories\ICategoriesView.cs" />
+    <Compile Include="Categories\IdEventArgs.cs" />
     <Compile Include="CategoryCompanies\CategoryCompaniesPresenter.cs" />
     <Compile Include="CategoryCompanies\CategoryCompaniesViewModel.cs" />
     <Compile Include="CategoryCompanies\FormGetCategoryCompaniesEventArgs.cs" />

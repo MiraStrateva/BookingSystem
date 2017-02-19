@@ -1,9 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookingSystem.Data.Models
 {
     public class Workingtime
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid WorkingtimeId { get; set; }
 
         public Boolean MoDayOff { get; set; }

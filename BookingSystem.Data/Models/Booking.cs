@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookingSystem.Data.Models
 {
     public class Booking
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid BookingId { get; set; }
 
         [MaxLength(128)]
