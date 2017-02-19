@@ -1,5 +1,7 @@
 ﻿using BookingSystem.Services.Contracts;
 using WebFormsMvp;
+using System.Linq;
+using Bytes2you.Validation;
 
 namespace BookingSystem.MVP.CategoryCompanies
 {
@@ -13,6 +15,9 @@ namespace BookingSystem.MVP.CategoryCompanies
             ICategoryService categoryService) 
             : base(view)
         {
+            Guard.WhenArgument(companyService, "companyService").IsNull().Throw();
+            Guard.WhenArgument(categoryService, "categoryService").IsNull().Throw();
+
             this.companyService = companyService;
             this.categoryService = categoryService;
 
@@ -21,7 +26,15 @@ namespace BookingSystem.MVP.CategoryCompanies
 
         private void View_OnCategoryCompaniesGetData(object sender, FormGetCategoryCompaniesEventArgs e)
         {
-            this.View.Model.CategorieCompanies = this.companyService.GetCompaniesByCategoryId(e.categoryId);
+            string searchText = string.IsNullOrEmpty(e.searchText) ? string.Empty : e.searchText.ToLower();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                this.View.Model.CategorieCompanies = this.companyService.GetCompaniesByCategoryId(e.categoryId);
+            }
+            else
+            {
+                this.View.Model.CategorieCompanies = this.companyService.GetCompaniesByCategoryIdNameAndDescription(e.categoryId, searchText);
+            }
             this.View.Model.CategoryName = this.categoryService.GetCategoryNameById(e.categoryId);
         }
     }

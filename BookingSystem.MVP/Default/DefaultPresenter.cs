@@ -1,4 +1,5 @@
 ﻿using BookingSystem.Services.Contracts;
+using Bytes2you.Validation;
 using WebFormsMvp;
 
 namespace BookingSystem.MVP.Default
@@ -10,6 +11,7 @@ namespace BookingSystem.MVP.Default
         public DefaultPresenter(IDefaultView view, ICategoryService categoryService) 
             : base(view)
         {
+            Guard.WhenArgument(categoryService, "categoryService").IsNull().Throw();
             this.categoryService = categoryService;
 
             this.View.OnCategoriesGetData += this.View_OnCategoriesGetData; ;
