@@ -48,5 +48,12 @@ namespace BookingSystem.Services
         {
             return this.BookingSystemContext.Companies.FirstOrDefault(c => c.UserId == userId);
         }
+
+        public IQueryable<Company> GetCompaniesByNameOrDescription(string searchText)
+        {
+            return GetAllCompanies()
+                        .Where(c => (string.IsNullOrEmpty(c.CompanyName) ? false : c.CompanyName.ToLower().Contains(searchText)) ||
+                        (string.IsNullOrEmpty(c.CompanyDescription) ? false : c.CompanyDescription.ToLower().Contains(searchText)));
+        }
     }
 }

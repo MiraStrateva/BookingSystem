@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-md-4">
-            <section id="socialLoginForm">
+            <section id="socialLoginForm" hidden="hidden">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
             </section>
         </div>

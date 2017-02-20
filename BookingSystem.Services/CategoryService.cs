@@ -67,5 +67,10 @@ namespace BookingSystem.Services
         {
             return categoryId.HasValue ? this.BookingSystemContext.Categories.Find(categoryId) : null;
         }
+
+        public IQueryable<Category> GetAllCategoriesWithIncludedCompanies()
+        {
+            return this.BookingSystemContext.Categories.Include(c => c.Companies);
+        }
     }
 }

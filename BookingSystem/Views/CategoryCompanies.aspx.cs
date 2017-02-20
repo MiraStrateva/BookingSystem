@@ -14,22 +14,6 @@ namespace BookingSystem.Views
         public event EventHandler<FormGetCategoryCompaniesEventArgs> OnCategoryCompaniesGetData;
         public string CategoryName;
         
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void LinkButtonSearch_Click(object sender, EventArgs e)
-        {
-            //string searchText = this.TextBoxSearchParam.Text.ToLower();
-            ////Guid categoryId = ((Guid)this.Request.Params[0]);
-            //this.OnCategoryCompaniesGetData?.Invoke(this, new FormGetCategoryCompaniesEventArgs(categoryId, searchText));
-
-            //ListViewCategoryCompanies.DataSource = this.Model.CategorieCompanies;
-            //ListViewCategoryCompanies.DataBind();
-           
-        }
-
         public IQueryable<Company> ListViewCategoryCompanies_GetData([QueryString] Guid? categoryId, [Control] string TextBoxSearchParam)
         {
             this.OnCategoryCompaniesGetData?.Invoke(this, new FormGetCategoryCompaniesEventArgs(categoryId, TextBoxSearchParam));

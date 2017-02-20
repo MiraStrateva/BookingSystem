@@ -249,6 +249,7 @@
     <Resource Include="Images\background.jpg" />
     <Content Include="Views\Admin\Categories.aspx" />
     <Content Include="Views\Admin\Companies.aspx" />
+    <Content Include="Views\Book.aspx" />
     <Content Include="Views\CategoryCompanies.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -296,7 +297,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Error.css" />
+    <Content Include="Views\PickAndBook.aspx" />
     <Content Include="Views\RegisterCompany.aspx" />
+    <Content Include="Views\SearchCompanies.aspx" />
     <Content Include="Views\Site.Master" />
     <Content Include="Views\ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -456,6 +459,13 @@
       <DependentUpon>Companies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Helpers\EntityDataSourceExtentions.cs" />
+    <Compile Include="Views\Book.aspx.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Book.aspx.designer.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\CategoryCompanies.aspx.cs">
       <DependentUpon>CategoryCompanies.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -481,12 +491,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PickAndBook.aspx.cs">
+      <DependentUpon>PickAndBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PickAndBook.aspx.designer.cs">
+      <DependentUpon>PickAndBook.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterCompany.aspx.cs">
       <DependentUpon>RegisterCompany.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\RegisterCompany.aspx.designer.cs">
       <DependentUpon>RegisterCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchCompanies.aspx.cs">
+      <DependentUpon>SearchCompanies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SearchCompanies.aspx.designer.cs">
+      <DependentUpon>SearchCompanies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

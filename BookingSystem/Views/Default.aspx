@@ -20,81 +20,6 @@
         </asp:DataList>
     </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Our newest members</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-            </div>
-            <br />
-            <p>
-                <a class="btn btn-default" href="#">See all places&raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-6">
-            <h2>Just booked</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-                <div class="col-md-4">
-                    <asp:Image CssClass="place" runat="server" 
-                        ImageUrl="~/Images/question-mark.jpg"></asp:Image>
-                </div>
-            </div>
-            <br />
-            <p>
-                <a class="btn btn-default" href="#">Take hour for &raquo;</a>
-            </p>
-        </div>
-    </div>
-
     <asp:LoginView runat="server" ViewStateMode="Disabled">
         <AnonymousTemplate>
             <div class="row">
@@ -102,7 +27,7 @@
                     <div class="jumbotron" id="joinus">
                         <h1>Join Us</h1>
                         <p class="lead">If you own a company that offers hourly services and you want to be found by more people join us!</p>
-                        <p><a href="./RegisterCompany.aspx" class="btn btn-primary btn-lg">See how &raquo;</a></p>
+                        <p><a href="./RegisterCompany.aspx" class="btn btn-primary btn-lg">Register your company &raquo;</a></p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -110,7 +35,7 @@
                         <h1>Pick and Book</h1>
                         <p class="lead">You can book an hour for any service provided by our partners with one click only. 
                             Find your service, pick your hour and book!</p>
-                        <p><a href="./../Account/Register.aspx" class="btn btn-primary btn-lg">See how &raquo;</a></p>
+                        <p><a href="./PickAndBook.aspx" class="btn btn-primary btn-lg">Pick & Book &raquo;</a></p>
                     </div>
                 </div>
             </div>

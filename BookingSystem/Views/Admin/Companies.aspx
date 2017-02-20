@@ -3,5 +3,8 @@
     Inherits="BookingSystem.Views.Admin.Companies" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="AdminContent" runat="server">
-    <h1>Admin Companies</h1>
+    <div class="text-center">
+        <h1>Admin Companies</h1>
+        <asp:Image runat="server" ImageUrl="/Images/under-construction.jpg" />
+    </div>
 </asp:Content>

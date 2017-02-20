@@ -20,12 +20,6 @@ body {
 .categoryImage:hover {
     opacity:1;
 }
- 
-.place {
-    position:relative;
-    width:100%;
-    opacity:0.9;
-}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -82,55 +76,4 @@ input[type="select"] {
     background: url("/Images/keyboard-1905883_1280.jpg") no-repeat;
     color:white;
 }
-
-/*.prevButton,
-.nextButton {
-    color:transparent;
-    background: transparent;
-    position: absolute;
-    display: block;
-    height: 20px;
-    width: 20px;
-    line-height: 0px;
-    font-size: 0px;
-    cursor: pointer;
-    top: 50%;
-    margin-top: -10px\9;
-    padding: 0;
-    border: none;
-    outline: none;
-    transform: translate(0, -50%);
-}
-
-.prevButton:hover, .prevButton:focus,
-  .nextButton:hover,
-  .nextButton:focus {
-    outline: none;
-    background: transparent;
-    color: transparent; }
-    .prevButton:hover:before, .prevButton:focus:before,
-    .nextButton:hover:before,
-    .nextButton:focus:before {
-      opacity: 1; }
-  .prevButton:before,
-  .nextButton:before {
-    opacity: 0.25; }
-
-.prevButton:before, .nextButton:before {
-  font-family: "slick";
-  font-size: 20px;
-  line-height: 1;
-  color: white;
-  opacity: 0.75; }
-
-.prevButton {
-  left: -25px; }
-  .prevButton:before {
-    content: "←"; }
-
-.nextButton {
-  right: -25px; }
-  .nextButton:before {
-    content: "→"; }*/
-
 

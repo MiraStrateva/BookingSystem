@@ -61,7 +61,14 @@
     <Compile Include="Default\DefaultPresenter.cs" />
     <Compile Include="Default\DefaultViewModel.cs" />
     <Compile Include="Default\IDefaultView.cs" />
+    <Compile Include="PickAndBook\IPickAndBookView.cs" />
+    <Compile Include="PickAndBook\PickAndBookPresenter.cs" />
+    <Compile Include="PickAndBook\PickAndBookViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchCompanies\FormGetSearchCompaniesEventArgs.cs" />
+    <Compile Include="SearchCompanies\ISearchCompaniesView.cs" />
+    <Compile Include="SearchCompanies\SearchCompaniesPresenter.cs" />
+    <Compile Include="SearchCompanies\SearchCompaniesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -8,6 +8,8 @@ namespace BookingSystem.Services.Contracts
     {
         IQueryable<Category> GetAllCategories();
 
+        IQueryable<Category> GetAllCategoriesWithIncludedCompanies();
+
         string GetCategoryNameById(Guid? categoryId);
 
         int InsertCategory(Category category);

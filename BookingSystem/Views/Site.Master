@@ -15,7 +15,6 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/Shelves.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body id="main">
     <form runat="server">
@@ -63,14 +62,56 @@
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Client" runat="server">
+                                <ContentTemplate>                            
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Hello, <%: Context.User.Identity.GetUserName()  %> !<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/Account/Manage">Manage your account</a></li>
+                                                <li><a href="./../Views/RegisterCompany">Register your company</a></li>
+                                                <li><a href="./../Views/UserBookings">See your bookings</a></li>
+                                                <li class="divider"></li>
+                                                <li><asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/" OnLoggingOut="Unnamed_LoggingOut" /></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Company" runat="server">
+                                <ContentTemplate>                            
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Hello, <%: Context.User.Identity.GetUserName()  %> !<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/Account/Manage">Manage your account</a></li>
+                                                <li><a href="./../Views/UserCompany">Manage your company</a></li>
+                                                <li><a href="./../Views/CompanyBookings">See bookings</a></li>
+                                                <li class="divider"></li>
+                                                <li><asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/" OnLoggingOut="Unnamed_LoggingOut" /></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Admin" runat="server">
+                                <ContentTemplate>                            
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Hello, <%: Context.User.Identity.GetUserName()  %> !<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/Account/Manage">Manage your account</a></li>
+                                                <li><a href="./../Views/Admin/Categories">Manage categories</a></li>
+                                                <li><a href="./../Views/Admin/Companies">Manage companies</a></li>
+                                                <li class="divider"></li>
+                                                <li><asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/" OnLoggingOut="Unnamed_LoggingOut" /></li>
+                                            </ul>
+                                        </li>
+                                    </ul>                                    
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
                     </asp:LoginView>
                 </div>
             </div>

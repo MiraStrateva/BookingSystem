@@ -10,6 +10,8 @@ namespace BookingSystem.Services.Contracts
 
         IQueryable<Company> GetCompaniesByCategoryId(Guid? categoryId);
 
+        IQueryable<Company> GetCompaniesByNameOrDescription(string searchText);
+
         IQueryable<Company> GetCompaniesByCategoryIdNameOrDescription(Guid? categoryId, string searchText);
 
         IQueryable<Company> GetCompaniesLastAdded(int count);
