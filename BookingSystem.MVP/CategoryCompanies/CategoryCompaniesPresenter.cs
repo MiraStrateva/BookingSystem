@@ -1,6 +1,5 @@
 ﻿using BookingSystem.Services.Contracts;
 using WebFormsMvp;
-using System.Linq;
 using Bytes2you.Validation;
 
 namespace BookingSystem.MVP.CategoryCompanies
@@ -33,7 +32,7 @@ namespace BookingSystem.MVP.CategoryCompanies
             }
             else
             {
-                this.View.Model.CategorieCompanies = this.companyService.GetCompaniesByCategoryIdNameAndDescription(e.categoryId, searchText);
+                this.View.Model.CategorieCompanies = this.companyService.GetCompaniesByCategoryIdNameOrDescription(e.categoryId, searchText);
             }
             this.View.Model.CategoryName = this.categoryService.GetCategoryNameById(e.categoryId);
         }

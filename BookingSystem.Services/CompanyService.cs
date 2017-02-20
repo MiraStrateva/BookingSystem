@@ -27,7 +27,7 @@ namespace BookingSystem.Services
                 null;
         }
 
-        public IQueryable<Company> GetCompaniesByCategoryIdNameAndDescription(Guid? categoryId, string searchText)
+        public IQueryable<Company> GetCompaniesByCategoryIdNameOrDescription(Guid? categoryId, string searchText)
         {
             return GetCompaniesByCategoryId(categoryId)
                         .Where(c => (string.IsNullOrEmpty(c.CompanyName) ? false : c.CompanyName.ToLower().Contains(searchText)) ||
@@ -39,7 +39,7 @@ namespace BookingSystem.Services
             throw new NotImplementedException();
         }
 
-        public Company GetCompanyById(Guid? id)
+        public Company GetById(Guid? id)
         {
             return id.HasValue ? this.BookingSystemContext.Companies.Find(id) : null;
         }

@@ -23,9 +23,16 @@ namespace BookingSystem.Services
 
         public string GetCategoryNameById(Guid? categoryId)
         {
-            return categoryId.HasValue ?
-                this.BookingSystemContext.Categories.Find(categoryId).CategoryName :
-                string.Empty;
+            if (categoryId.HasValue)
+            {
+                Category category = this.BookingSystemContext.Categories.Find(categoryId);
+                if (category == null)
+                {
+                    return string.Empty;
+                }
+                return category.CategoryName;
+            }
+            return string.Empty;
         }
 
         public int InsertCategory(Category category)
@@ -33,7 +40,6 @@ namespace BookingSystem.Services
             this.BookingSystemContext.Categories.Add(category);
             return this.BookingSystemContext.SaveChanges();
         }
-
 
         public int DeleteCategory(Guid? categoryId)
         {
@@ -59,7 +65,7 @@ namespace BookingSystem.Services
 
         public Category GetById(Guid? categoryId)
         {
-            return this.BookingSystemContext.Categories.Find(categoryId);
+            return categoryId.HasValue ? this.BookingSystemContext.Categories.Find(categoryId) : null;
         }
     }
 }

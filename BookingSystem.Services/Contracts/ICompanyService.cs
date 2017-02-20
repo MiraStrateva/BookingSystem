@@ -10,11 +10,11 @@ namespace BookingSystem.Services.Contracts
 
         IQueryable<Company> GetCompaniesByCategoryId(Guid? categoryId);
 
-        IQueryable<Company> GetCompaniesByCategoryIdNameAndDescription(Guid? categoryId, string searchText);
+        IQueryable<Company> GetCompaniesByCategoryIdNameOrDescription(Guid? categoryId, string searchText);
 
         IQueryable<Company> GetCompaniesLastAdded(int count);
 
-        Company GetCompanyById(Guid? id);
+        Company GetById(Guid? id);
 
         Company GetCompanyByUserId(string userId);
     }
