@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D4A4DFE7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.Services.Tests", "Tests\BookingSystem.Services.Tests\BookingSystem.Services.Tests.csproj", "{B7E60509-B73B-4B0D-B202-3D7EFF81B974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.MVP.Tests", "BookingSystem.MVP.Tests\BookingSystem.MVP.Tests.csproj", "{FCE6E9B3-9897-41F3-9C8E-585B117DC479}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.MVP.Tests", "Tests\BookingSystem.MVP.Tests\BookingSystem.MVP.Tests.csproj", "{FCE6E9B3-9897-41F3-9C8E-585B117DC479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

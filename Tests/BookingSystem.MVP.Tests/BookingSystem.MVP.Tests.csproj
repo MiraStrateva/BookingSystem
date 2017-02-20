@@ -72,15 +72,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BookingSystem.Data\BookingSystem.Data.csproj">
+    <ProjectReference Include="..\..\BookingSystem.Data\BookingSystem.Data.csproj">
       <Project>{A5A0E925-D1DF-433E-9E44-C1B4C7CA6B5A}</Project>
       <Name>BookingSystem.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BookingSystem.MVP\BookingSystem.MVP.csproj">
+    <ProjectReference Include="..\..\BookingSystem.MVP\BookingSystem.MVP.csproj">
       <Project>{71fca214-112e-4dc9-835b-7421b5a43150}</Project>
       <Name>BookingSystem.MVP</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BookingSystem.Services\BookingSystem.Services.csproj">
+    <ProjectReference Include="..\..\BookingSystem.Services\BookingSystem.Services.csproj">
       <Project>{265dab7d-2e07-4201-815f-b549fddf1610}</Project>
       <Name>BookingSystem.Services</Name>
     </ProjectReference>
