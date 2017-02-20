@@ -1,0 +1,24 @@
+﻿body 
+{
+    background: url('/Images/error.png') no-repeat center center fixed;
+    background-size:cover;
+}
+.error-number
+{
+    margin-top:100px;
+    margin-left:100px;
+    font-size:7em;
+    color:white;
+}
+.error-text
+{
+    font-size:3em;
+    margin-left:100px;
+    color:white;
+}
+a
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

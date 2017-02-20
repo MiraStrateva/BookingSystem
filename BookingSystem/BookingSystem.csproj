@@ -295,6 +295,7 @@
     <Content Include="Views\Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Error.css" />
     <Content Include="Views\RegisterCompany.aspx" />
     <Content Include="Views\Site.Master" />
     <Content Include="Views\ViewSwitcher.ascx" />

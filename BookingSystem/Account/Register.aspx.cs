@@ -18,13 +18,21 @@ namespace BookingSystem.Account
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
+                IdentityResult roleResult = manager.AddToRole(user.Id, "Client");
+                if (roleResult.Succeeded)
+                {
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                    //string code = manager.GenerateEmailConfirmationToken(user.Id);
+                    //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
+                    //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                }
+                else
+                {
+                    ErrorMessage.Text = roleResult.Errors.FirstOrDefault();
+                }
             }
             else 
             {
