@@ -19,5 +19,9 @@ namespace BookingSystem.Services.Contracts
         Company GetById(Guid? id);
 
         Company GetCompanyByUserId(string userId);
+
+        int UpdateCompany(Company company);
+
+        int InsertCompany(Company company);
     }
 }

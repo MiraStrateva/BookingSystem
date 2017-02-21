@@ -1,10 +1,5 @@
-﻿using BookingSystem.MVP.SearchCompanies;
-using BookingSystem.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookingSystem.Services.Contracts;
+using Bytes2you.Validation;
 using WebFormsMvp;
 
 namespace BookingSystem.MVP.SearchCompanies
@@ -16,6 +11,7 @@ namespace BookingSystem.MVP.SearchCompanies
         public SearchCompaniesPresenter(ISearchCompaniesView view, ICompanyService companyService)
             : base(view)
         {
+            Guard.WhenArgument(companyService, "companyService").IsNull().Throw();
             this.companyService = companyService;
 
             this.View.OnSearchCompaniesGetData += View_OnSearchCompaniesGetData;

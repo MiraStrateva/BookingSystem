@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using BookingSystem.Data.Models;
 using BookingSystem.Data.Contracts;
+using System.Data.Entity;
 
 namespace BookingSystem.Services
 {
@@ -54,6 +55,20 @@ namespace BookingSystem.Services
             return GetAllCompanies()
                         .Where(c => (string.IsNullOrEmpty(c.CompanyName) ? false : c.CompanyName.ToLower().Contains(searchText)) ||
                         (string.IsNullOrEmpty(c.CompanyDescription) ? false : c.CompanyDescription.ToLower().Contains(searchText)));
+        }
+
+        public int UpdateCompany(Company company)
+        {
+            var entry = this.BookingSystemContext.Entry(company);
+            entry.State = EntityState.Modified;
+
+            return this.BookingSystemContext.SaveChanges();
+        }
+
+        public int InsertCompany(Company company)
+        {
+            this.BookingSystemContext.Companies.Add(company);
+            return this.BookingSystemContext.SaveChanges();
         }
     }
 }

@@ -5,7 +5,7 @@ namespace BookingSystem.MVP.CategoryCompanies
 {
     public class CategoryCompaniesViewModel
     {
-        public IQueryable<Company> CategorieCompanies { get; set; }
+        Company CategorieCompanies { get; set; }
 
         public string CategoryName { get; set; }
     }
