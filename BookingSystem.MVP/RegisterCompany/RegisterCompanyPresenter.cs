@@ -4,8 +4,6 @@ using Bytes2you.Validation;
 using System;
 using WebFormsMvp;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using BookingSystem.Auth;
 
 namespace BookingSystem.MVP.RegisterCompany
 {
@@ -14,7 +12,7 @@ namespace BookingSystem.MVP.RegisterCompany
         private readonly ICompanyService companyService;
         private readonly ICategoryService categoryService;
 
-        protected RegisterCompanyPresenter(IRegisterCompanyView view, ICompanyService companyService, ICategoryService categoryService) 
+        public RegisterCompanyPresenter(IRegisterCompanyView view, ICompanyService companyService, ICategoryService categoryService) 
             : base(view)
         {
             Guard.WhenArgument(companyService, "companyService").IsNull().Throw();
@@ -32,9 +30,9 @@ namespace BookingSystem.MVP.RegisterCompany
             this.View.Model.Categories = this.categoryService.GetAllCategories();
         }
 
-        private void View_OnUpdateCompany(object sender, CategoryIdEventArgs e)
+        private void View_OnUpdateCompany(object sender, CompanyIdEventArgs e)
         {
-            Company item = this.companyService.GetById(e.CategoryId);
+            Company item = this.companyService.GetById(e.CompanyId);
             bool insertMode = false;
 
             if (item == null)
@@ -47,24 +45,29 @@ namespace BookingSystem.MVP.RegisterCompany
             {
                 string userId = this.View.User.Identity.GetUserId();
 
-                var manager = this.View.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                IdentityResult roleResult = manager.AddToRole(item.UserId, "Company");
-                if (!roleResult.Succeeded)
+                IdentityResult roleResult;
+                if (!this.View.Manager.IsInRole(userId, "Company"))
                 {
-                    this.View.ModelState.AddModelError("", "Company Role is not added");
-                    return;
+                    roleResult = this.View.Manager.AddToRole(userId, "Company");
+                    if (!roleResult.Succeeded)
+                    {
+                        this.View.ModelState.AddModelError("", "Company Role is not added");
+                        return;
+                    }
                 }
-                roleResult = manager.RemoveFromRole(item.UserId, "Client");
-                if (!roleResult.Succeeded)
+                if (this.View.Manager.IsInRole(userId, "Client"))
                 {
-                    this.View.ModelState.AddModelError("", "Client Role is not removed");
-                    return;
+                    roleResult = this.View.Manager.RemoveFromRole(userId, "Client");
+                    if (!roleResult.Succeeded)
+                    {
+                        this.View.ModelState.AddModelError("", "Client Role is not removed");
+                        return;
+                    }
                 }
 
                 if (insertMode)
                 {
-                    // TO DO: Attach UserID to Company
-                    item.UserId = this.View.User.Identity.GetUserId();
+                    item.UserId = userId;
                     this.companyService.InsertCompany(item);
                 }
                 else

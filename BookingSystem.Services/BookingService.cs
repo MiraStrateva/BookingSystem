@@ -27,7 +27,7 @@ namespace BookingSystem.Services
 
         public Booking GetBookingById(Guid id)
         {
-            return this.BookingSystemContext.Bookings.FirstOrDefault(b => b.BookingId == id);
+            return this.BookingSystemContext.Bookings.Find(id);
         }
 
         public IQueryable<Booking> GetBookingByUserId(string userId)

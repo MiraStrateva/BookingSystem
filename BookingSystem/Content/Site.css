@@ -8,6 +8,7 @@ body {
         background: url('/Images/background3.jpg') no-repeat center center fixed;
         background-size: cover;
         color:white;
+        font-weight:bold;
     }
 
 .categoryImage{
@@ -28,6 +29,9 @@ body {
     padding-right: 15px;
 }
 
+.label-value {
+    font-size:1.5em;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

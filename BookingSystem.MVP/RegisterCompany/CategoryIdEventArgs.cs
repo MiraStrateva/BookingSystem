@@ -2,13 +2,13 @@
 
 namespace BookingSystem.MVP.RegisterCompany
 {
-    public class CategoryIdEventArgs : EventArgs
+    public class CompanyIdEventArgs : EventArgs
     {
-        public Guid? CategoryId { get; private set; }
+        public Guid? CompanyId { get; private set; }
 
-        public CategoryIdEventArgs(Guid? categoryId)
+        public CompanyIdEventArgs(Guid? companyId)
         {
-            this.CategoryId = categoryId;
+            this.CompanyId = companyId;
         }
     }
 }

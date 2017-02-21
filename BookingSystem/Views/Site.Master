@@ -86,7 +86,7 @@
                                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Hello, <%: Context.User.Identity.GetUserName()  %> !<b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="/Account/Manage">Manage your account</a></li>
-                                                <li><a href="./../Views/UserCompany">Manage your company</a></li>
+                                                <li><a href="./../Views/RegisterCompany">Manage your company</a></li>
                                                 <li><a href="./../Views/CompanyBookings">See bookings</a></li>
                                                 <li class="divider"></li>
                                                 <li><asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/" OnLoggingOut="Unnamed_LoggingOut" /></li>
@@ -121,7 +121,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Hour For</p>
+                <p>&copy; <%: DateTime.Now.Year %> - ASP.NET Web Forms 2017 Course Project</p>
             </footer>
         </div>
     </form>

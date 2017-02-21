@@ -27,7 +27,7 @@
                     <div class="jumbotron" id="joinus">
                         <h1>Join Us</h1>
                         <p class="lead">If you own a company that offers hourly services and you want to be found by more people join us!</p>
-                        <p><a href="./RegisterCompany.aspx" class="btn btn-primary btn-lg">Register your company &raquo;</a></p>
+                        <p><a href="/Views/RegisterCompany.aspx" class="btn btn-primary btn-lg">Register your company &raquo;</a></p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -35,7 +35,7 @@
                         <h1>Pick and Book</h1>
                         <p class="lead">You can book an hour for any service provided by our partners with one click only. 
                             Find your service, pick your hour and book!</p>
-                        <p><a href="./PickAndBook.aspx" class="btn btn-primary btn-lg">Pick & Book &raquo;</a></p>
+                        <p><a href="/Views/PickAndBook.aspx" class="btn btn-primary btn-lg">Pick & Book &raquo;</a></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="col-md-12 jumbotron" id="contactus">
                 <h1>Here for you</h1>
                 <p class="lead">Please do not hesitate to contact our Live Help or send an e-mail to support@hour.for if you need any help at all.</p>
-                <p><a href="./Contact.aspx" class="btn btn-primary btn-lg">Contact us &raquo;</a></p>
+                <p><a href="/Views/Contact.aspx" class="btn btn-primary btn-lg">Contact us &raquo;</a></p>
             </div>
         </LoggedInTemplate>
     </asp:LoginView>

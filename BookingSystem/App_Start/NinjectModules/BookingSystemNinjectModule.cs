@@ -30,7 +30,6 @@ namespace BookingSystem.App_Start.NinjectModules
             this.Bind<ICompanyService>().To<CompanyService>();
             this.Bind<ICategoryService>().To<CategoryService>();
             this.Bind<IBookingService>().To<BookingService>();
-            this.Bind<IWorkingtimeService>().To<WorkingtimeService>();
 
             // Presenters
             //this.Bind<DefaultPresenter>().ToSelf();
