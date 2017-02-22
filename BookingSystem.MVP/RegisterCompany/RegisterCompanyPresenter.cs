@@ -46,7 +46,7 @@ namespace BookingSystem.MVP.RegisterCompany
                 string userId = this.View.User.Identity.GetUserId();
 
                 IdentityResult roleResult;
-                if (!this.View.Manager.IsInRole(userId, "Company"))
+                if (!this.View.User.IsInRole("Company"))
                 {
                     roleResult = this.View.Manager.AddToRole(userId, "Company");
                     if (!roleResult.Succeeded)
@@ -55,7 +55,7 @@ namespace BookingSystem.MVP.RegisterCompany
                         return;
                     }
                 }
-                if (this.View.Manager.IsInRole(userId, "Client"))
+                if (this.View.User.IsInRole("Client"))
                 {
                     roleResult = this.View.Manager.RemoveFromRole(userId, "Client");
                     if (!roleResult.Succeeded)
