@@ -34,12 +34,7 @@ namespace BookingSystem.Services
                         .Where(c => (string.IsNullOrEmpty(c.CompanyName) ? false : c.CompanyName.ToLower().Contains(searchText)) ||
                         (string.IsNullOrEmpty(c.CompanyDescription) ? false : c.CompanyDescription.ToLower().Contains(searchText)));
         }
-
-        public IQueryable<Company> GetCompaniesLastAdded(int count)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Company GetById(Guid? id)
         {
             return id.HasValue ? this.BookingSystemContext.Companies.Find(id) : null;

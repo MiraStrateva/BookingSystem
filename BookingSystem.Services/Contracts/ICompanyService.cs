@@ -14,8 +14,6 @@ namespace BookingSystem.Services.Contracts
 
         IQueryable<Company> GetCompaniesByCategoryIdNameOrDescription(Guid? categoryId, string searchText);
 
-        IQueryable<Company> GetCompaniesLastAdded(int count);
-
         Company GetById(Guid? id);
 
         Company GetCompanyByUserId(string userId);

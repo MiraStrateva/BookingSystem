@@ -67,10 +67,12 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="CategoryServiceTests\DeleteCategory_Should.cs" />
     <Compile Include="CategoryServiceTests\GetAllCategories_Should.cs" />
     <Compile Include="CategoryServiceTests\GetById_Should.cs" />
     <Compile Include="CategoryServiceTests\GetCategoryNameById_Should.cs" />
     <Compile Include="CompanyServicesTests\GetById_Should.cs" />
+    <Compile Include="CompanyServicesTests\GetCompaniesByCategoryId_Should.cs" />
     <Compile Include="CompanyServicesTests\GetCompaniesByCategoryIdNameOrDescription_Should.cs" />
     <Compile Include="Mocks\QueryableDbSetMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

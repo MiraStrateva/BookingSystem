@@ -69,7 +69,10 @@
     <Compile Include="Categories\CategoriesPresenterTests\View_OnUpdateItem_Should.cs" />
     <Compile Include="CategoryCompanies\CategoryCompaniesPresenterTests\View_OnCategoryCompaniesGetData_Should.cs" />
     <Compile Include="Default\DefaultPresenterTests\View_OnCategoriesGetData_Should.cs" />
+    <Compile Include="PickAndBook\PickAndBookPresenter\View_OnCategoriesGetData_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterCompany\RegisterCompanyPresenter\View_OnGetCategories_Should.cs" />
+    <Compile Include="SearchCompanies\SearchCompaniesPresenter\View_OnSearchCompaniesGetData_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BookingSystem.Data\BookingSystem.Data.csproj">

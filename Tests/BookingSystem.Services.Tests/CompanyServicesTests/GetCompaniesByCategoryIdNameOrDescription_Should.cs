@@ -28,7 +28,7 @@ namespace BookingSystem.Services.Tests.CompanyServicesTests
             var expectedCompanyResultSet = companies.Where(c => c.CategoryId.Equals(testCategoryId) && 
                                 c.CompanyName.ToLower().Contains(searchTerm)).AsQueryable();
                                         
-            var companySetMock = QueryableDbSetMock.GetQueryableMockDbSet(GetCompanies(categoryIds));
+            var companySetMock = QueryableDbSetMock.GetQueryableMockDbSet(companies);
             contextMock.Setup(c => c.Companies).Returns(companySetMock);
 
             CompanyService companyService = new CompanyService(contextMock.Object);
@@ -56,7 +56,7 @@ namespace BookingSystem.Services.Tests.CompanyServicesTests
             var expectedCompanyResultSet = companies.Where(c => c.CategoryId.Equals(testCategoryId) &&
                                 c.CompanyDescription.ToLower().Contains(searchTerm)).AsQueryable();
 
-            var companySetMock = QueryableDbSetMock.GetQueryableMockDbSet(GetCompanies(categoryIds));
+            var companySetMock = QueryableDbSetMock.GetQueryableMockDbSet(companies);
             contextMock.Setup(c => c.Companies).Returns(companySetMock);
 
             CompanyService companyService = new CompanyService(contextMock.Object);
